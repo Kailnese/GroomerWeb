@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript中获取input元素value值</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript">
+        function printInputValue(){
+            var userE = {
+                name: document.getElementById("dd").value,
+                age: 22,
+                dog: {
+                    liu: "wang"
+                }
+            };
+
+            localStorage.setItem('user'+'1', JSON.stringify(userE));
+
+            var userJsonStr = localStorage.getItem('user1');
+            userE = JSON.parse(userJsonStr);
+            console.log(userE.name);
+            console.log(userE.dog.liu);
+            if(!userE.name){
+                alert("null!");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="dd" name="hotdog">
+    <input type="button" name="clda" onclick="printInputValue()" value="submit" />
+</body>
+</html>
